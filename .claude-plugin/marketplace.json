@@ -1,0 +1,20 @@
+{
+  "name": "prasun-skills",
+  "owner": {
+    "name": "Prasun Anand",
+    "email": "prasunanand99@gmail.com"
+  },
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "structured-notes",
+      "source": "./structured-notes",
+      "description": "Turn messy notes, transcripts, and brain-dumps into glanceable notes — with an accountability audit and a self-verification pass.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": { "name": "Prasun Anand" }
+    }
+  ]
+}
