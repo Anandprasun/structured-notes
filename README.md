@@ -68,7 +68,7 @@ More full input→output pairs are in [`examples/`](./examples).
 This repo **is** a [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces). Point Claude Code at it and install:
 
 ```
-/plugin marketplace add <your-username>/structured-notes
+/plugin marketplace add Anandprasun/structured-notes
 /plugin install structured-notes@prasun-skills
 ```
 
@@ -81,7 +81,7 @@ Download the packaged [`dist/structured-notes.skill`](./dist/structured-notes.sk
 ### Manual (any Claude setup with a `~/.claude/skills` folder)
 
 ```bash
-git clone https://github.com/<your-username>/structured-notes.git
+git clone https://github.com/Anandprasun/structured-notes.git
 cp -r structured-notes/plugins/structured-notes/skills/structured-notes ~/.claude/skills/
 ```
 
