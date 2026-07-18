@@ -1,0 +1,8 @@
+brain dump, cant sleep. the pricing page redesign keeps nagging me. conversion is stuck at 2.1% and i think the three-tier layout is confusing people. what if we go to two tiers, simple. or single price. hmm.
+need to reply to the investor email about burn rate before monday, they asked for updated runway numbers. runway is like 14 months at current burn.
+idea: annual billing discount to improve cash flow, 20% off? worth modeling.
+todo: renew the AWS reserved instances, they expire end of month, big cost saving if we don't forget.
+also fire the analytics vendor, we're paying 2k/month and nobody uses it. cancel before the renewal on the 28th.
+should i hire a designer or contract it out for the pricing page. leaning contract, faster.
+random thought — our onboarding email open rate is 60%, that's actually good, leave it alone.
+feeling behind on everything but the pricing thing is the real priority i think.

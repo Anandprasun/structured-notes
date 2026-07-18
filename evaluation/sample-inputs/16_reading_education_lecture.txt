@@ -1,0 +1,9 @@
+lecture notes, intro macroeconomics, week 6 — monetary policy.
+central bank tools: open market operations (buying/selling govt bonds), the discount rate, and reserve requirements. OMO is the main one used day to day.
+expansionary vs contractionary. expansionary = buy bonds, lower rates, more money supply, fight recession. contractionary = opposite, fight inflation.
+the transmission mechanism: rate changes → borrowing cost → investment & consumption → aggregate demand → output and prices. there's a lag, prof said 6-18 months, important for exam.
+liquidity trap — when rates near zero, monetary policy loses traction, cited Japan 1990s and 2008. keynesian point: fiscal policy needed then.
+the Taylor rule came up — a formula for setting rates based on inflation gap and output gap. prof said know the intuition not the exact equation.
+quantity theory of money: MV = PQ. if V and Q stable, money supply drives price level. monetarist view, Friedman.
+exam tip: prof emphasized the transmission lag and the liquidity trap twice. likely essay question.
+confused about: difference between the discount rate and the federal funds rate, need to review.

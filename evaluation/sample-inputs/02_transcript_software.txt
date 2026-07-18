@@ -1,0 +1,9 @@
+[00:03] Maya (researcher): Tell me about the last time you used the dashboard.
+[00:11] Jordan (user, ops manager): Yeah so I open it every morning, first thing, coffee in hand. But honestly I only look at one number — the queue backlog. Everything else is noise to me.
+[01:20] Jordan: The problem is it takes like four clicks to get to the backlog. Why is that not the front page? I've complained about this to your sales guy.
+[02:45] Maya: What would the ideal version look like?
+[02:52] Jordan: Backlog front and center, big number, red if it's over 200. That's it. I don't need the fifteen charts.
+[04:10] Jordan: Oh and the export button is broken on Safari. Has been for months. We switched to Chrome just for your tool, which is annoying.
+[05:30] Jordan: If you fixed those two things I'd stop threatening to churn honestly. My boss asks every quarter why we pay for it.
+[06:40] Maya: That's super useful, thank you. Anything else?
+[06:44] Jordan: No that's the main stuff. Fix the backlog thing please.

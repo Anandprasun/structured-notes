@@ -1,0 +1,58 @@
+{
+  "note": "Ground-truth gaps/risks genuinely present in each input. A gap is 'caught' if the output surfaces it as a flag, risk, open item, ownerless/dateless note, contradiction, or implied action — anywhere in the output. Recall = caught / total.",
+  "cases": {
+    "01": [
+      {"id": "changelog_owner", "type": "ownerless", "desc": "updating the customer-facing changelog has no owner"},
+      {"id": "design_system_date", "type": "dateless_blocking", "desc": "'lock the design system' has no date but blocks eng"},
+      {"id": "budget_contradiction", "type": "contradiction", "desc": "is the $40k this quarter or does it roll over — stated as unclear/both"},
+      {"id": "legal_review_unresolved", "type": "unanswered", "desc": "does legal need to review the new checkout copy — nobody knew"},
+      {"id": "feature_flag_undecided", "type": "unanswered", "desc": "feature flag for search rollout — Lena thinks yes, not decided"},
+      {"id": "nudge_ravi_implied", "type": "implied_action", "desc": "author said they'll nudge Ravi on the design system — implied action, not on a list"}
+    ],
+    "03": [
+      {"id": "aws_deadline", "type": "deadline_risk", "desc": "AWS reserved instances expire end of month — cost risk if missed"},
+      {"id": "analytics_cancel_deadline", "type": "deadline_risk", "desc": "cancel analytics vendor before the 28th renewal"},
+      {"id": "investor_deadline", "type": "deadline_risk", "desc": "reply to investor with runway numbers before Monday"},
+      {"id": "pricing_tiers_undecided", "type": "unanswered", "desc": "two-tier vs single price — not decided"},
+      {"id": "designer_hire_undecided", "type": "unanswered", "desc": "hire a designer vs contract it out — leaning but not decided"}
+    ],
+    "07": [
+      {"id": "meadowbrook_risk", "type": "risk", "desc": "Meadowbrook champion left the company — deal at risk"},
+      {"id": "solutions_engineer_undecided", "type": "unanswered", "desc": "bring in a solutions engineer for Meadowbrook re-engagement — undecided"},
+      {"id": "q3_pipeline_light", "type": "risk", "desc": "light on Q3 pipeline — needs lead gen"},
+      {"id": "fatima_legal_stall", "type": "risk", "desc": "Fatima deal legal review sitting 8 days — stalling"}
+    ],
+    "08": [
+      {"id": "renewal_deadline", "type": "deadline_risk", "desc": "renewal auto-charges on the 20th — hard deadline"},
+      {"id": "adoption_risk", "type": "risk", "desc": "only 2 of 8 users adopted — low adoption is the root risk"},
+      {"id": "roi_by_18th_implied", "type": "implied_action", "desc": "Nadia committed to build ROI case + pull usage data by the 18th"},
+      {"id": "budget_cut_context", "type": "risk", "desc": "budget cut 30%, CFO sees no ROI — churn driver"}
+    ],
+    "10": [
+      {"id": "split_deal_credit_q", "type": "unanswered", "desc": "how are split deals credited in new segmentation — unclear"},
+      {"id": "inflight_territory_q", "type": "unanswered", "desc": "what happens to in-flight deals when territories change — leadership to clarify"},
+      {"id": "analytics_beta_ready_q", "type": "unanswered", "desc": "is the analytics beta ready for customer demos or internal only — open"},
+      {"id": "quota_territory_anxiety", "type": "risk", "desc": "anxiety about quota raise and territory redraw — morale risk"}
+    ],
+    "12": [
+      {"id": "lowball_offer_risk", "type": "risk", "desc": "insurer offered $8k lowball; client should not sign"},
+      {"id": "statute_deadline", "type": "deadline_risk", "desc": "statute of limitations is two years — time constraint"},
+      {"id": "records_needed_implied", "type": "implied_action", "desc": "client to get medical records and police report — needed to proceed"},
+      {"id": "no_recorded_statement", "type": "risk", "desc": "must not give recorded statement / sign anything to the insurer"}
+    ],
+    "13": [
+      {"id": "ar_aging_risk", "type": "risk", "desc": "$340k AR over 90 days, mostly Delticom — collection risk"},
+      {"id": "price_raise_deferred", "type": "deferred", "desc": "raising prices to offset revenue miss — deferred to next month, board-level"},
+      {"id": "revenue_miss_risk", "type": "risk", "desc": "revenue missed forecast by 6% on slipped deals"},
+      {"id": "cloud_overrun_risk", "type": "risk", "desc": "$200k over on cloud costs — needs the 15% optimization to land"}
+    ],
+    "20": [
+      {"id": "timeline_spin", "type": "contradiction", "desc": "Marcus quoted 4-week migration but solutions eng said 6-8 with custom schema"},
+      {"id": "sso_tier_forced", "type": "risk", "desc": "SSO only on the $7k enterprise tier vs $3k pro — forced upsell / cost risk"},
+      {"id": "second_quote_implied", "type": "implied_action", "desc": "author should get a second quote from the competitor before committing"},
+      {"id": "security_signoff_implied", "type": "implied_action", "desc": "loop in security and get the SSO requirement in writing"},
+      {"id": "contract_expiry_deadline", "type": "deadline_risk", "desc": "current contract expires — decision time-boxed to end of month"},
+      {"id": "sso_necessity_undecided", "type": "unanswered", "desc": "is enterprise/SSO actually necessary or can they live without it — unresolved"}
+    ]
+  }
+}

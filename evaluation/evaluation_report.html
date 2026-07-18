@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>structured-notes — Evaluation Report</title>
+<style>
+  :root{
+    --bg:#0f1116; --panel:#171a21; --panel2:#1e222b; --ink:#e8eaed; --muted:#9aa3b2;
+    --line:#2a2f3a; --skill:#5b8def; --base:#c9873a; --good:#4bbf73; --bad:#e5646e; --warn:#e0b341;
+  }
+  @media (prefers-color-scheme: light){
+    :root{--bg:#f6f7f9;--panel:#fff;--panel2:#f0f2f5;--ink:#1a1d23;--muted:#5b6472;--line:#e2e5ea;}
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:960px;margin:0 auto;padding:28px 20px 80px;}
+  h1{font-size:26px;margin:0 0 4px} h2{font-size:19px;margin:34px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+  .sub{color:var(--muted);margin:0 0 20px}
+  .verdict{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:18px 0}
+  .verdict b{color:var(--skill)}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0}
+  .tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .tile .n{font-size:26px;font-weight:700} .tile .l{color:var(--muted);font-size:12.5px;margin-top:2px}
+  .tile .d{font-size:12.5px;margin-top:6px}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px}
+  th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--panel2);color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+  td.num,th.num{text-align:center;font-variant-numeric:tabular-nums}
+  tr:last-child td{border-bottom:none}
+  .pos{color:var(--good);font-weight:700}.neg{color:var(--bad);font-weight:700}.zero{color:var(--muted)}
+  .bar{display:flex;align-items:center;gap:8px;margin:6px 0}
+  .bar .cap{width:150px;color:var(--muted);font-size:12.5px;text-align:right}
+  .track{flex:1;display:flex;gap:3px;align-items:center}
+  .seg{height:16px;border-radius:3px}
+  .legend{display:flex;gap:16px;font-size:12.5px;color:var(--muted);margin:4px 0 14px 158px}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:middle;margin-right:5px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+  .card h3{margin:0 0 6px;font-size:15px}
+  ul{margin:6px 0;padding-left:20px} li{margin:4px 0}
+  code{background:var(--panel2);padding:1px 5px;border-radius:4px;font-size:12.5px}
+  .flag{border-left:3px solid var(--warn);padding-left:12px;margin:10px 0}
+  .win{border-left:3px solid var(--good);padding-left:12px;margin:10px 0}
+  .foot{color:var(--muted);font-size:12px;margin-top:30px;border-top:1px solid var(--line);padding-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>structured-notes — Evaluation Report</h1>
+  <p class="sub">20 realistic inputs · 4 input types × 4 industry groups + stress cases · each run with-skill and against plain Claude (baseline) · graded on an 8-point rubric (max 16)</p>
+
+  <div class="verdict">
+    <b>Verdict.</b> On raw quality the skill and plain Claude are near-identical (<b>16.00</b> vs <b>15.85</b> of 16 after fixes) — because a strong model is already very good at note formatting. The skill's value is not a dramatic quality jump on any single note; it is <b>consistency and guardrails</b>: it never invented a fact, never fabricated a decisions section, and preserved author voice — the exact places where the baseline occasionally slipped. Testing also found and fixed one real weakness (redundancy), which is what pushed it ahead.
+  </div>
+
+  <div class="tiles">
+    <div class="tile"><div class="n">15.80 → 16.00</div><div class="l">Skill mean (before → after fix)</div><div class="d pos">+0.15 vs baseline</div></div>
+    <div class="tile"><div class="n">15.85</div><div class="l">Baseline mean (plain Claude)</div><div class="d zero">strong reference</div></div>
+    <div class="tile"><div class="n">0 vs 2</div><div class="l">Fidelity slips (skill vs baseline)</div><div class="d pos">skill invented nothing</div></div>
+    <div class="tile"><div class="n">4 / 4</div><div class="l">Regressed cases fixed & re-verified</div><div class="d pos">conciseness 1→2</div></div>
+  </div>
+
+  <h2>Where the skill wins and loses (per-criterion, max 2)</h2>
+  <div class="legend"><span><span class="dot" style="background:var(--skill)"></span>with skill (after fix)</span><span><span class="dot" style="background:var(--base)"></span>baseline</span></div>
+  <div id="bars"></div>
+  <p class="sub" style="margin-top:10px">The skill is level on the big-ticket criteria (both are excellent at type detection, glanceability, structure, decisions) and edges ahead on <b>fidelity</b>, <b>action-items</b>, and <b>voice</b> — the guardrail dimensions. Its only pre-fix weakness was <b>conciseness</b> (restating decisions in two places); the fix brought it to parity.</p>
+
+  <h2>Per-case scores</h2>
+  <table id="cases"><thead><tr><th>#</th><th>Type</th><th>Industry</th><th class="num">Skill</th><th class="num">Base</th><th class="num">Δ</th><th>Note</th></tr></thead><tbody></tbody></table>
+  <p class="sub" style="margin-top:8px">Cases 01/03/05/19 show the skill's post-fix score (all 16); their pre-fix score was 15, docked only on conciseness. Cases 08/10/12/18 are where the baseline slipped.</p>
+
+  <h2>Fidelity — the highest-stakes dimension</h2>
+  <div class="win"><b>With skill: 0 issues across all 20 cases.</b> Every dosage, dollar figure, date, and verbatim quote was preserved exactly — including <code>furosemide 40mg BID</code>, <code>INR 4.1</code>, <code>$4.6M vs $4.9M</code>, and the witness quote <code>"make the numbers work or we're both finished."</code></div>
+  <div class="flag"><b>Baseline: 2 real slips.</b> Case 08 — invented a month (<code>"renewal auto-charge Jan 20"</code> when the input only said "the 20th"). Case 12 (legal intake) — introduced a derived total <code>"Damages so far ~$10.2K"</code> not stated in the source. Both are the kind of small, plausible fabrication that erodes trust in high-stakes notes — and exactly what the skill's "never invent" rule prevents.</div>
+
+  <h2>What we changed from testing</h2>
+  <div class="card"><h3>Fix: "Say each thing once"</h3>
+  The one consistent complaint was redundancy — meetings restated a decision in both the Discussion gist and the Decisions section; brain-dumps echoed Ideas as Open loops; reading notes repeated reactions as follow-ups. Added a rule making the pulled-out sections (Decisions, Actions) the single home for outcomes, with the body giving reasoning/context rather than restating. Re-ran the 4 affected cases: all went <b>15→16</b>, conciseness <b>1→2</b>, with no loss of facts and no regressions.</div>
+
+  <h2>How to keep testing this (repeatable plan)</h2>
+  <div class="card">
+  <ul>
+    <li><b>The suite is reusable.</b> 20 graded inputs live in <code>eval-suite/inputs/</code>; re-run any time you change the skill and compare to <code>benchmark.json</code>.</li>
+    <li><b>Watch conciseness and fidelity</b> — those are the two dimensions where note-formatters actually differ; the rest saturate at "good".</li>
+    <li><b>Add adversarial cases</b> as you find real-world misses: inputs with contradictory statements, half-finished sentences, mixed languages, numbers that look like dates, or a "decision" that was actually just a suggestion.</li>
+    <li><b>Grade blind and at finer granularity.</b> A 0–2 scale saturates; a 0–4 scale or blind A/B (skill vs baseline, judge doesn't know which) will separate near-ties more sharply.</li>
+    <li><b>Test triggering separately</b> — whether the skill fires on the right prompts is a different question from output quality; the skill-creator has a description-optimizer for that.</li>
+  </ul>
+  </div>
+
+  <p class="foot">Rubric: type detection · glanceability · structure · action-items · decisions · fidelity · conciseness · voice. Each 0–2, graded by independent rubric-driven reviewers reading input + both outputs. Full per-case JSON in <code>eval-suite/grading/</code>.</p>
+</div>
+
+<script>
+const crit=[
+ ["type detection",2.00,2.00],["glanceability",2.00,2.00],["structure",2.00,2.00],
+ ["action-items",2.00,1.95],["decisions",2.00,2.00],["fidelity",2.00,1.95],
+ ["conciseness",2.00,2.00],["voice / fit",2.00,1.95]
+];
+const bx=document.getElementById('bars');
+crit.forEach(([c,s,b])=>{
+  const row=document.createElement('div');row.className='bar';
+  row.innerHTML=`<div class="cap">${c}</div><div class="track">
+    <div class="seg" style="width:${s/2*46}%;background:var(--skill)"></div>
+    <span style="font-size:11.5px;color:var(--muted);width:30px">${s.toFixed(2)}</span>
+    <div class="seg" style="width:${b/2*46}%;background:var(--base)"></div>
+    <span style="font-size:11.5px;color:var(--muted);width:30px">${b.toFixed(2)}</span></div>`;
+  bx.appendChild(row);
+});
+const rows=[
+ ["01","Meeting","Software",16,16,"sprint planning"],
+ ["02","Transcript","Software",16,16,"user interview"],
+ ["03","Brain-dump","Software",16,16,"founder dump"],
+ ["04","Meeting","Software",16,16,"standup — no decisions, none fabricated"],
+ ["05","Reading","Software",16,16,"RFC notes"],
+ ["06","Transcript","Sales",16,16,"discovery call"],
+ ["07","Meeting","Sales",16,16,"pipeline review"],
+ ["08","Transcript","Sales",16,15,"baseline invented 'Jan' date"],
+ ["09","Brain-dump","Sales",16,16,"QBR prep"],
+ ["10","Meeting","Sales",16,15,"baseline buried an action item"],
+ ["11","Meeting","Healthcare",16,16,"care-team huddle — dosages exact"],
+ ["12","Transcript","Legal",16,16,"baseline added a derived total"],
+ ["13","Meeting","Finance",16,16,"budget review — figures exact"],
+ ["14","Transcript","Legal",16,16,"witness prep — quote verbatim"],
+ ["15","Brain-dump","Healthcare",16,16,"clinician dump"],
+ ["16","Reading","Education",16,16,"lecture notes"],
+ ["17","Reading","Research",16,16,"paper notes"],
+ ["18","Brain-dump","Education",16,15,"baseline sanitized the voice"],
+ ["19","Meeting","Education",16,16,"faculty meeting"],
+ ["20","Ambiguous","General",16,16,"router — skill flagged its assumption"],
+];
+const tb=document.querySelector('#cases tbody');
+rows.forEach(r=>{
+  const d=r[3]-r[4];
+  const cls=d>0?'pos':d<0?'neg':'zero';
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td class="num">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td>
+  <td class="num">${r[3]}</td><td class="num">${r[4]}</td><td class="num ${cls}">${d>0?'+':''}${d}</td><td>${r[5]}</td>`;
+  tb.appendChild(tr);
+});
+</script>
+</body>
+</html>

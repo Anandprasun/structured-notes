@@ -1,0 +1,8 @@
+notes from reading the RFC on our new event-driven architecture (RFC-108, authored by Sanjay).
+core proposal: move from synchronous REST calls between services to an event bus (they propose Kafka). services publish events, others subscribe. decoupling.
+claimed benefits: better fault isolation (one service down doesn't cascade), easier to add consumers, replay-ability for debugging.
+tradeoffs Sanjay admits: eventual consistency is hard, harder to trace a request across services, ops complexity of running Kafka.
+he proposes a phased migration, starting with the order-processing pipeline as a pilot in Q3.
+open question in the doc: exactly-once vs at-least-once delivery — he leans at-least-once with idempotent consumers.
+my reaction: pilot scope makes sense but I'm worried we don't have the ops maturity for Kafka. should ask about managed alternatives like MSK or Confluent. also the tracing concern is real, we'd need distributed tracing first.
+decision needed at the arch review thurs: approve the pilot or not.

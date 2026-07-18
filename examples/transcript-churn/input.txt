@@ -1,0 +1,7 @@
+[00:04] Nadia (CSM): I saw you filed a cancellation request — I wanted to understand what happened before anything's final.
+[00:15] Greg (customer, marketing director): Look, it's not you personally. Budget got slashed 30% this quarter and your tool was on the chopping block. My CFO doesn't see the ROI.
+[01:30] Greg: Honestly we also never fully adopted it. Maybe two of my eight people actually log in. The onboarding was rough and we kind of gave up.
+[02:45] Nadia: If I could get you a dedicated onboarding session and a usage report showing the value, would that change the CFO conversation?
+[03:10] Greg: Maybe. If you can show that the two people using it are saving real hours, that'd help. But I need it by the 20th, that's when the renewal auto-charges and I've told them to cancel.
+[04:50] Greg: I'm not opposed to staying if the numbers are there. I just can't defend it blind.
+[05:30] Nadia: Give me until the 18th. I'll pull the usage data and build the ROI case, and set up the onboarding for your team.

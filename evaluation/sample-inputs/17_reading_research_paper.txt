@@ -1,0 +1,8 @@
+reading notes — "Attention Sampling for Long-Document Classification" (Park et al., 2024, NeurIPS).
+problem: transformers choke on very long documents (100k+ tokens) due to quadratic attention cost. existing fixes (sparse attention, truncation) lose information.
+their method: a learned sampler picks the top-k most informative passages before the transformer sees them, so you only pay full attention on a subset. they call it AttSample.
+key claim: matches full-attention accuracy at 8x lower compute on long-doc benchmarks.
+evidence: tested on 4 datasets (legal contracts, medical records, scientific papers, one more). AttSample beats truncation baselines by 6-9 F1 points, ties the full-attention ceiling within 1 point.
+limitation they admit: the sampler needs task-specific training, doesn't transfer zero-shot. also struggles when relevant info is uniformly spread rather than concentrated.
+my reaction: elegant, but the "concentrated info" assumption is doing a lot of work — many real docs aren't like that. the 8x claim is compute at inference, training cost is higher, they gloss over that.
+follow-up: check if the code is released, compare to Longformer directly (they don't). relevant to our doc-processing pipeline.

@@ -1,0 +1,32 @@
+{
+  "note": "HIDDEN gaps — implied, not stated. A summarizer that faithfully lists the facts will typically NOT surface these; catching them requires reasoning (arithmetic, timeline logic, domain knowledge, cross-references). 'Caught' = the output explicitly flags the problem, not merely restates the underlying facts.",
+  "cases": {
+    "H1": [
+      {"id": "legal_timeline_impossible", "type": "impossible_timeline", "desc": "Launch locked for June 1 but legal review 'takes ~3 weeks' and hasn't started as of May 20 — cannot finish in time. The core contradiction nobody in the room caught."},
+      {"id": "api_dependency_risk", "type": "risk", "desc": "Payments integration depends on the vendor API that 'might slip a week' — building the launch on an unready dependency."},
+      {"id": "video_timing_risk", "type": "risk", "desc": "Demo video editor booked until the 30th, but dry run is May 31 / launch June 1 — the video may not be ready in time."}
+    ],
+    "H2": [
+      {"id": "security_docs_action", "type": "implied_action", "desc": "Rep committed to send the SOC 2 report + DPA — a real deliverable buried mid-conversation, easy to lose."},
+      {"id": "signer_vs_driver_risk", "type": "risk", "desc": "Priya 'drives' the decision but the COO must actually sign — an approval dependency that isn't obvious."},
+      {"id": "fiscal_deadline", "type": "deadline_risk", "desc": "Wants to be live within six weeks tied to fiscal year end — a hard, budget-linked deadline."}
+    ],
+    "H3": [
+      {"id": "crm_net_loss", "type": "arithmetic", "desc": "Cancelling the old CRM 'saves 2000/mo' but the replacement costs 2400/mo — it's a net INCREASE of ~400/mo, framed as a saving."},
+      {"id": "friday_collision", "type": "schedule_conflict", "desc": "Board deck, investor update, AND conference flight all fall on the same Friday — can't do all three; travel conflicts with producing the deck."},
+      {"id": "hiring_reversal", "type": "contradiction", "desc": "Decided last week to pause hiring, now reopening the eng role — reverses a very recent decision."},
+      {"id": "aws_owner", "type": "ownerless", "desc": "AWS bill up 40%, 'someone should look into it' — nobody assigned."}
+    ],
+    "H4": [
+      {"id": "math_shortfall", "type": "arithmetic", "desc": "Mandate is 300k. Proposed cuts sum to 100k+80k+60k = 240k (and they keep the 40k event) — 60k short of target."},
+      {"id": "travel_exemption_overstated", "type": "arithmetic", "desc": "Sales travel is exempt, so the 80k travel saving is overstated (only non-sales counts) — the real shortfall is even larger than 60k."},
+      {"id": "contractor_dependency_risk", "type": "risk", "desc": "Contractor cuts may break the two projects that depend on them — raised but unresolved, and it's a real delivery risk."}
+    ],
+    "H5": [
+      {"id": "warfarin_nsaid_interaction", "type": "clinical_risk", "desc": "Ibuprofen (an NSAID) ordered for a patient just started on warfarin — a well-known dangerous bleeding interaction. The highest-stakes hidden gap."},
+      {"id": "hyperkalemia_plan", "type": "risk", "desc": "Potassium 5.9 is high (hyperkalemia); 'will address' but no concrete plan or owner."},
+      {"id": "xray_order_owner", "type": "ownerless_blocking", "desc": "Diaz's discharge depends on the morning chest x-ray but 'someone needs to make sure it gets ordered' — ownerless and blocking."},
+      {"id": "oxygen_setup_dependency", "type": "risk", "desc": "Diaz's discharge also depends on home oxygen setup that RT 'was supposed to' arrange — unconfirmed dependency that could delay discharge."}
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+[00:04] Rep (Tom): So what's the budget you're working with for this?
+[00:10] Buyer (Priya, ops director): We've got about 50k a year earmarked for tooling in this category. It's approved.
+[01:15] Priya: The main thing is it has to integrate with our warehouse system, that's non-negotiable.
+[02:30] Tom: Totally. Our Pro plan covers that. It's 3,000 a month.
+[02:38] Priya: Okay. Yeah that works within what we discussed.
+[03:50] Priya: Oh, before I forget, can you send over your SOC 2 report and the data processing agreement? Our security team will want those.
+[03:58] Tom: Yeah for sure, I'll get those over.
+[05:20] Priya: Timeline-wise we'd want to be live within six weeks. Our fiscal year ends soon and I want it on this year's budget.
+[06:40] Tom: That's doable. I'll put together a proposal.
+[07:10] Priya: Great. I'll need to loop in our COO to actually sign, but I drive the decision.

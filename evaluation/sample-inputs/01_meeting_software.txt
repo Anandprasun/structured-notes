@@ -1,0 +1,7 @@
+sprint 24 planning, mar 3. present: me (pm), lena (eng lead), omar, priya, and dev from qa.
+big thing: the search revamp. lena says the elasticsearch migration is bigger than scoped, needs 2 more devs or it slips a sprint. we decided to pull omar off the notifications work onto search for this sprint. notifications gets bumped to sprint 25.
+priya raised that the mobile crash rate spiked to 1.8% after the 4.2 release, up from 0.6. agreed it's a p0, she'll hotfix today.
+dev asked about test coverage for search - we said write integration tests alongside, not after. lena owns that call.
+decided to cut the "saved searches" feature from v1 scope, ship it in a fast-follow. too risky for the deadline.
+priya to hotfix the crash. omar moves to search. lena to spec the extra dev ask and take it to eng director by friday.
+open: do we need a feature flag for the search rollout? lena thinks yes, not decided. also nobody owns updating the customer-facing changelog.

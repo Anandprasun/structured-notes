@@ -1,0 +1,7 @@
+daily standup, apr 9. quick one.
+me: finished the API rate limiting, in review. today starting on the webhook retries.
+lena: still debugging the flaky CI, think it's a race condition in the test setup. no blockers.
+omar: shipped the search autocomplete yesterday. today doing cleanup and writing docs. nothing blocking.
+priya: out sick tomorrow heads up. today wrapping the crash hotfix verification, looks stable, crash rate back to 0.5%.
+dev: qa on the search feature, found two minor bugs, logged them, not blockers. continuing regression pass today.
+that's it, no blockers, back to work.

@@ -1,0 +1,9 @@
+Q2 budget review, apr 22. finance: me (CFO), controller Ana, FP&A analyst Ben, plus dept heads.
+revenue came in at 4.6M vs 4.9M forecast, a 6% miss, driven by two slipped enterprise deals. Ben to reforecast H2.
+opex: we're 200k over on cloud costs, mostly the data pipeline. eng committed to a 15% cloud optimization by end of Q2. marketing underspent by 120k, we'll reallocate 80k of that to the enterprise sales hire.
+gross margin held at 72%, healthy. cash position 12.4M, runway comfortable at ~19 months.
+Ana flagged the AR aging — 340k over 90 days, mostly one customer (Delticom). decided to pause their services until they pay, legal to send a demand letter.
+headcount: approved 3 of the 5 requested hires — 2 in sales, 1 in eng. deferred the 2 marketing roles to Q3 pending pipeline.
+decisions: reallocate 80k marketing to sales hire, pause Delticom, approve 3 hires, eng to cut cloud 15%.
+actions: Ben reforecast H2 by may 1. Ana send Delticom to legal. eng lead to deliver cloud optimization plan. dept heads to resubmit deferred requests in Q3.
+open: do we raise prices to offset the revenue miss? board-level, deferred to next month.

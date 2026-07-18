@@ -1,0 +1,7 @@
+ok dumping. need to cancel the old CRM subscription, saves us 2000 a month, do it before the renewal on the 15th. the new CRM we're switching to is 2400 a month though but whatever it's better.
+also the board deck is due friday and so is the investor update, both friday, ugh.
+decided last week we'd pause hiring. but honestly we really need that senior engineer, maybe we make an exception. thinking we open the eng role back up.
+todo: send the offer letter to the designer candidate, she's waiting, don't lose her.
+renew the office lease or move? lease is up in 60 days. leaning renew, cheaper than moving.
+need to book my flight for the conference, it's the same friday actually, wait can i even do the board deck if i'm traveling. hmm.
+the aws bill jumped 40% last month, someone should look into why, probably the new data pipeline.

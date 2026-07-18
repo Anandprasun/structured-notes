@@ -1,0 +1,8 @@
+CS dept faculty meeting, oct 8. present: chair (Prof. Ndiaye), 9 faculty, dept admin.
+enrollment: intro course demand up 30%, we're turning students away, need more sections or a bigger room. decided to add two sections in spring, chair to request two TAs and a lecturer line from the dean.
+curriculum: proposal to add a required ethics-in-computing course. debated — some worried about credit-hour bloat. decided to pilot it as an elective first, revisit making it required next year. Prof. Larsson to draft the syllabus.
+faculty hiring: two open positions, ML and systems. search committee formed: Larsson (chair of committee), Okonkwo, and Reyes. job ad to post by nov 1.
+grad admissions: applications up, but funding flat. decided to admit the same cohort size, prioritize funded students. admissions committee to set the bar.
+Prof. Kim raised the aging lab equipment, needs a capital request. chair to include in the budget ask.
+actions: chair requests TAs/lecturer and equipment budget. Larsson drafts ethics syllabus and runs the search. admissions committee sets cohort criteria by nov.
+open: do we count the ethics elective toward the major requirements? undecided. also the seminar series needs a coordinator, nobody volunteered.

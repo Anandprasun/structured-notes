@@ -1,0 +1,10 @@
+2026 sales kickoff, jan 15. whole team, ~20 people, plus leadership. long session, capturing the key stuff.
+CEO opened: company grew 40% last year to 18M ARR, target this year is 28M, aggressive. new funding round closed, 25M series B, runway extended.
+new comp plan announced: base stays, commission accelerators kick in above 100% quota, and a new SPIFF for multi-year deals. effective feb 1. some grumbling about the quota raise (up 20% across the board).
+product roadmap from CPO: three big launches — the analytics module (Q2), the enterprise SSO/security suite (Q2, unlocks bigger deals), and an API/integrations platform (Q4). sales asked to gather feedback on the analytics beta.
+new segmentation: we're splitting into SMB, midmarket, and a new enterprise team. enterprise reps to be named next week. territories being redrawn, causing anxiety.
+marketing: shifting budget to ABM for enterprise, promising 200 qualified accounts by q2. sales-marketing SLA being rewritten.
+decisions: adopt the new comp plan feb 1, stand up the enterprise team, freeze new territory complaints until the redraw is published next friday.
+actions: everyone to complete the new product certification by end of Jan. managers to submit territory input by jan 22. reps to nominate enterprise candidates.
+open questions: how are split deals credited in the new segmentation? unclear. what happens to in-flight deals when territories change? leadership to clarify. is the analytics beta ready for customer demos or internal only?
+lots of energy, some anxiety about quotas and territories. follow-up town hall scheduled for jan 29.

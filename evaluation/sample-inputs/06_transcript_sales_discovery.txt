@@ -1,0 +1,8 @@
+[00:05] Rick (AE): Appreciate the time. What's driving you to look at a solution now?
+[00:14] Fatima (VP Ops, midmarket logistics): Our warehouse scheduling is done in spreadsheets and it's falling apart. We've grown to 6 facilities and it just doesn't scale. Last month we double-booked a dock and it cost us a big retail client.
+[01:50] Fatima: I have budget approved, around 80k annually, signed off by our COO. I need something live before peak season in October.
+[03:12] Rick: What's happened with other tools you've tried?
+[03:20] Fatima: We trialed a competitor, I won't name them, but the implementation was six months and we gave up. That can't happen again. Speed to value is everything.
+[05:00] Fatima: Decision makers are me, the COO for budget, and our IT director has to sign off on security. He's strict about SOC 2.
+[06:30] Fatima: If you can show me a live pilot at one facility within 30 days I'm very interested. Otherwise we keep looking.
+[07:10] Rick: Understood. I'll get you a pilot plan and loop in our security team on the SOC 2 docs.

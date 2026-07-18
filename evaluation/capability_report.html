@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>structured-notes — Capability & Proof</title>
+<style>
+  :root{--bg:#0f1116;--panel:#171a21;--panel2:#1e222b;--ink:#e8eaed;--muted:#9aa3b2;--line:#2a2f3a;--skill:#5b8def;--base:#c9873a;--good:#4bbf73;--bad:#e5646e;--warn:#e0b341;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f7f9;--panel:#fff;--panel2:#f0f2f5;--ink:#1a1d23;--muted:#5b6472;--line:#e2e5ea;}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:940px;margin:0 auto;padding:28px 20px 80px;}
+  h1{font-size:26px;margin:0 0 4px} h2{font-size:19px;margin:34px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+  .sub{color:var(--muted);margin:0 0 20px}
+  .verdict{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:18px 0}
+  .verdict b{color:var(--skill)}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0}
+  .tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .tile .n{font-size:24px;font-weight:700} .tile .l{color:var(--muted);font-size:12.5px;margin-top:2px} .tile .d{font-size:12.5px;margin-top:6px}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--panel2);color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+  td.num,th.num{text-align:center;font-variant-numeric:tabular-nums}
+  tr:last-child td{border-bottom:none}
+  .pos{color:var(--good);font-weight:700}.neg{color:var(--bad);font-weight:700}.zero{color:var(--muted)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+  .card h3{margin:0 0 6px;font-size:15px}
+  .win{border-left:3px solid var(--good);padding-left:12px;margin:10px 0}
+  .flag{border-left:3px solid var(--warn);padding-left:12px;margin:10px 0}
+  ul{margin:6px 0;padding-left:20px} li{margin:5px 0}
+  code{background:var(--panel2);padding:1px 5px;border-radius:4px;font-size:12.5px}
+  pre{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap}
+  .foot{color:var(--muted);font-size:12px;margin-top:30px;border-top:1px solid var(--line);padding-top:12px}
+  .bar{display:flex;align-items:center;gap:10px;margin:8px 0}
+  .bar .cap{width:210px;color:var(--muted);font-size:13px;text-align:right}
+  .track{flex:1;display:flex;align-items:center;gap:8px}
+  .seg{height:20px;border-radius:4px;min-width:2px}
+  .lab{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>structured-notes — Capability &amp; Proof</h1>
+  <p class="sub">What the skill actually guarantees over plain Claude — tested on gap-explicit and hidden-gap (reasoning-required) inputs, scored against a ground-truth key.</p>
+
+  <div class="verdict">
+    <b>The honest verdict.</b> A frontier model is already a strong note-taker <i>and</i> a strong auditor — when handed a focused task, plain Claude caught essentially every planted gap, including the arithmetic traps and a warfarin/NSAID interaction. So the skill's value is <b>not a higher ceiling</b> on a good day. It is a <b>guaranteed floor</b>: the audit and a self-check happen on <b>every</b> run, by contract — where the bare model does them only sometimes, and never verifies itself unprompted.
+  </div>
+
+  <div class="tiles">
+    <div class="tile"><div class="n">100% vs 0%</div><div class="l">Self-verification present &amp; accurate</div><div class="d pos">13/13 vs 0/13 runs — categorical</div></div>
+    <div class="tile"><div class="n">every run</div><div class="l">Audit layer produced</div><div class="d pos">by contract vs. variable</div></div>
+    <div class="tile"><div class="n">0 vs 2</div><div class="l">Fidelity slips (20 realistic cases)</div><div class="d pos">skill invented nothing</div></div>
+    <div class="tile"><div class="n">tie</div><div class="l">Raw gap recall (~100% both)</div><div class="d zero">the model is already good</div></div>
+  </div>
+
+  <h2>The one categorical capability gap: self-verification</h2>
+  <div class="bar"><div class="cap">Self-verification present &amp; accurate</div><div class="track">
+    <div class="seg" style="width:78%;background:var(--good)"></div><span class="lab">skill 13/13 (100%)</span></div></div>
+  <div class="bar"><div class="cap">&nbsp;</div><div class="track">
+    <div class="seg" style="width:1%;background:var(--bad)"></div><span class="lab">plain Claude 0/13 (0%)</span></div></div>
+  <p class="sub" style="margin-top:8px">Across 13 graded cases in two test sets, the skill ended every note with an accurate fidelity check (e.g. <code>"13/13 key facts verified against source"</code>, derived numbers marked, blank fields noted). Plain Claude did this <b>zero</b> times. This is the failure that bit the baseline in the broad run — it invented a <code>"Jan"</code> date and a made-up <code>$10.2K</code> damages total. A model doesn't check its own numbers unless told to; the skill makes it.</p>
+
+  <h2>Raw gap-catching: an honest tie</h2>
+  <table>
+    <thead><tr><th>Test set</th><th>What it stresses</th><th class="num">Skill recall</th><th class="num">Plain Claude recall</th></tr></thead>
+    <tbody>
+      <tr><td>Gap-explicit (8 cases)</td><td>gaps stated in the source</td><td class="num">33/33</td><td class="num">33/33</td></tr>
+      <tr><td>Hidden-gap (5 cases)</td><td>gaps needing reasoning: bad arithmetic, impossible timeline, drug interaction</td><td class="num">17/17</td><td class="num">17/17</td></tr>
+    </tbody>
+  </table>
+  <p class="sub" style="margin-top:8px">This is the surprising, important result: even on the hard set — a June-1 launch legal can't clear, a "saving" that's a net loss, cost cuts 60k short of mandate, ibuprofen on a fresh warfarin start — plain Claude flagged them all when the task was focused. <b>You can't manufacture a capability gap on reasoning a strong model already does.</b> The skill ties here; it doesn't lose.</p>
+
+  <h2>So where the skill genuinely wins</h2>
+  <div class="win"><b>Guaranteed consistency (the floor).</b> The skill's audit + verification fire on every run regardless of context length, rush, or phrasing. In the realistic 20-case run, the <i>unskilled</i> baseline mostly produced no audit and no verification at all — it only "kept up" here because each test handed it a clean, focused, obviously-flawed input. Real usage isn't that tidy.</div>
+  <div class="win"><b>Self-verification (the trust layer).</b> 100% vs 0%. In high-stakes notes — clinical, legal, financial — a note you can trust without re-reading the source is the whole game.</div>
+  <div class="win"><b>A stable house format.</b> Same spine, same layered structure, same place for decisions/actions/gaps every time — so a stack of notes is scannable and comparable, not 20 different shapes.</div>
+  <div class="flag"><b>What it is <i>not</i>.</b> It is not "the model couldn't do this." For an undeniable capability gap you'd need deterministic artifacts a chat can't reliably emit — a valid calendar <code>.ics</code>, a CSV tracker, a verification report file. That layer was scoped and deferred by choice; this report reflects the audit-plus-verification skill as it stands.</p></div>
+
+  <h2>Showcase — the audit &amp; verification in action</h2>
+  <p class="sub">Two real outputs from the hidden-gap set. Read past the <code>— — —</code> divider: that's the part a plain summary leaves out.</p>
+
+  <div class="card"><h3>H4 — Q3 cost-cutting meeting (finance): the numbers don't add up</h3>
+  <pre>## ⚠ Gaps &amp; Risks
+- Numbers don't hit the mandate: stated cuts are 100k + 80k + 60k = 240k
+  against a 300k "non-negotiable" target — a 60k shortfall.
+- Travel saving overstated: sales travel is exempt, so the real travel
+  saving is below 80k, widening the gap further.
+- Kept spend widens the gap: the 40k marketing event was retained "for now".
+- Unresolved dependency: do contractor cuts kill the two dependent projects?
+  If so, the single largest saving may not be viable.
+
+▶ Next best action: Close the 60k gap — the plan is 60k short at face value.
+
+## ✓ Fidelity check
+All figures verified against source (300k; 100k/80k/60k; 40k event).
+Shortfall math (240k total, 60k short) is derived from the three stated figures.</pre></div>
+
+  <div class="card"><h3>H5 — med-surg rounds (clinical): a dangerous drug pairing</h3>
+  <pre>## ⚠ Gaps &amp; Risks
+- Drug-interaction risk (flag for pharmacy): Hale started warfarin yesterday
+  and is now ordered ibuprofen PRN — an NSAID alongside a new anticoagulant
+  raises bleeding risk. Worth a pharmacy check before any dose is given.
+- Vague plan on a critical value: potassium 5.9 is high, "will address" —
+  no specific order or timeframe recorded.
+- No owner: "someone needs to make sure the chest x-ray gets ordered" —
+  nobody named, yet tomorrow's discharge depends on it.
+
+▶ Next best action: Pharmacy review of the warfarin + ibuprofen order before
+  it's given — the item with the most immediate patient-safety downside.
+
+## ✓ Fidelity check
+All clinical figures verified against source (beds 3/7/9; age 74; K+ 5.9;
+antibiotics day 3). No invented values or doses. 2 action fields left blank.</pre></div>
+
+  <p class="foot">Method: skill vs plain-Claude on 13 gap-seeded cases across software, sales, healthcare, legal, finance, and general domains; recall graded against ground-truth keys in <code>eval-suite/gaps_*_ground_truth.json</code>; verification presence checked per output. Full data in <code>eval-suite/grading/</code>.</p>
+</div>
+</body>
+</html>
