@@ -1,0 +1,8 @@
+{
+  "name": "structured-notes",
+  "version": "1.0.0",
+  "description": "Turn messy notes, transcripts, and brain-dumps into glanceable notes — with an accountability audit and a self-verification pass.",
+  "author": { "name": "Prasun Anand" },
+  "license": "MIT",
+  "keywords": ["notes", "meeting-notes", "transcript", "brain-dump", "productivity", "summarization"]
+}
